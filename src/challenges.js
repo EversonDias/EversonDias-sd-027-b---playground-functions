@@ -23,16 +23,15 @@ function splitSentence(frase) {
 // Desafio 4
 function concatName(array) {
   let firstItem = [];
-  let lestItem = [];
   firstItem = array[array.length - 1];
-  lestItem = array[0];
 
-  return `${firstItem}, ${lestItem}`;
+  return `${firstItem}, ${array[0]}`;
 }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let points = wins * 3 + ties;
+  return points;
 }
 
 // Desafio 6
