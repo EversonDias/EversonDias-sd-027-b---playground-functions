@@ -1,6 +1,13 @@
 // Desafio 1
-function compareTrue() {
-  // seu código aqui 
+function compareTrue(girafa, elefante) {
+  let resp;
+  if (girafa && elefante) {
+    resp = true;
+  } else {
+    resp = false;
+  }
+
+  return resp;
 }
 
 // Desafio 2
