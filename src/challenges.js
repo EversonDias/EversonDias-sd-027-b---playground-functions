@@ -60,8 +60,23 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(array) {
+  const phrase = [];
+  let number = 0;
+  for (number of array) {
+    let isDivisibleBy3 = number % 3;
+    let isDivisibleBy5 = number % 5;
+    if (isDivisibleBy3 === 0 && isDivisibleBy5 === 0) {
+      phrase.push('fizzBuzz');
+    } else if (isDivisibleBy3 === 0) {
+      phrase.push('fizz');
+    } else if (isDivisibleBy5 === 0) {
+      phrase.push('buzz');
+    } else {
+      phrase.push('bug!');
+    }
+  }
+  return phrase;
 }
 
 // Desafio 9
