@@ -25,13 +25,32 @@ function generatePhoneNumber(phone) {
 }
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  if (lineA > (lineB + lineC)) {
+    return false;
+  }
+  if (lineB > (lineA + lineC)) {
+    return false;
+  }
+  if (lineC > (lineA + lineB)) {
+    return false;
+  }
+  return true;
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(phrase) {
+  const radix = /[1-9]/gi;
+  let sumNumber = 0;
+  let numberToPhrase = phrase.match(radix);
+  for (let number of numberToPhrase) {
+    number = parseInt(number);
+    sumNumber += number;
+  }
+  if (sumNumber === 1) {
+    return `${sumNumber} copo de água`;
+  }
+  return `${sumNumber} copos de água`;
 }
 
 module.exports = {
