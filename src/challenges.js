@@ -120,8 +120,15 @@ function decode(codedPhrase) {
 }
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(tech, name) {
+  const list = [];
+  for (let nameTech of tech.sort()) {
+    list.push({ 'name': name, 'tech': nameTech });
+  }
+  if (tech.length === 0) {
+    return 'Vazio!';
+  }
+  return list;
 }
 
 module.exports = {
