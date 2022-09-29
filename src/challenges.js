@@ -60,73 +60,87 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
+function isDivisible(number, phrase) {
+  if (number % 3 === 0 && number % 5 === 0) {
+    phrase.push('fizzBuzz');
+  } else if (number % 3 === 0) {
+    phrase.push('fizz');
+  } else if (number % 5 === 0) {
+    phrase.push('buzz');
+  } else {
+    phrase.push('bug!');
+  }
+  return phrase;
+}
 function fizzBuzz(array) {
   const phrase = [];
-  let number = 0;
-  for (number of array) {
-    let isDivisibleBy3 = number % 3;
-    let isDivisibleBy5 = number % 5;
-    if (isDivisibleBy3 === 0 && isDivisibleBy5 === 0) {
-      phrase.push('fizzBuzz');
-    } else if (isDivisibleBy3 === 0) {
-      phrase.push('fizz');
-    } else if (isDivisibleBy5 === 0) {
-      phrase.push('buzz');
-    } else {
-      phrase.push('bug!');
-    }
+  for (let number of array) {
+    isDivisible(number, phrase);
   }
   return phrase;
 }
 
 // Desafio 9
-function encode(phrase) {
-  let codedPhrase = '';
-  for (let index = 0; index < phrase.length; index += 1) {
-    if (phrase[index] === 'a') {
-      codedPhrase += '1';
-    } else if (phrase[index] === 'e') {
-      codedPhrase += '2';
-    } else if (phrase[index] === 'i') {
-      codedPhrase += '3';
-    } else if (phrase[index] === 'o') {
-      codedPhrase += '4';
-    } else if (phrase[index] === 'u') {
-      codedPhrase += '5';
+function codedLetter(props) {
+  if (props === 'i') {
+    return '3';
+  }
+  if (props === 'o') {
+    return '4';
+  }
+  if (props === 'u') {
+    return '5';
+  }
+  return props;
+}
+function encode(phraseEncoder) {
+  let phrase = '';
+  for (let litter of phraseEncoder) {
+    if (litter === 'a') {
+      phrase += '1';
+    } else if (litter === 'e') {
+      phrase += '2';
     } else {
-      codedPhrase += phrase[index];
+      phrase += codedLetter(litter);
     }
   }
-  return codedPhrase;
+  return phrase;
+}
+
+function decodeLetter(props) {
+  if (props === '3') {
+    return 'i';
+  }
+  if (props === '4') {
+    return 'o';
+  }
+  if (props === '5') {
+    return 'u';
+  }
+  return props;
 }
 function decode(codedPhrase) {
-  let phraseDecoder = '';
-  for (let index = 0; index < codedPhrase.length; index += 1) {
-    if (codedPhrase[index] === '1') {
-      phraseDecoder += 'a';
-    } else if (codedPhrase[index] === '2') {
-      phraseDecoder += 'e';
-    } else if (codedPhrase[index] === '3') {
-      phraseDecoder += 'i';
-    } else if (codedPhrase[index] === '4') {
-      phraseDecoder += 'o';
-    } else if (codedPhrase[index] === '5') {
-      phraseDecoder += 'u';
+  let phrase = '';
+  for (let litter of codedPhrase) {
+    if (litter === '1') {
+      phrase += 'a';
+    } else if (litter === '2') {
+      phrase += 'e';
     } else {
-      phraseDecoder += codedPhrase[index];
+      phrase += decodeLetter(litter);
     }
   }
-  return phraseDecoder;
+  return phrase;
 }
 
 // Desafio 10
-function techList(tech, name) {
+function techList(arrayTech, name) {
   const list = [];
-  for (let nameTech of tech.sort()) {
-    list.push({ 'name': name, 'tech': nameTech });
-  }
-  if (tech.length === 0) {
+  if (arrayTech.length === 0) {
     return 'Vazio!';
+  }
+  for (let tech of arrayTech.sort()) {
+    list.push({ name, tech });
   }
   return list;
 }
