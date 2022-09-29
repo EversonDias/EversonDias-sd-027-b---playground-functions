@@ -20,6 +20,9 @@ function generatePhoneNumber(phone) {
     return 'Array com tamanho incorreto.';
   }
   let mensagem = zeroAndNine(phone);
+  if (mensagem) {
+    return mensagem;
+  }
   mensagem = count3x(phone);
   if (mensagem) {
     return mensagem;
