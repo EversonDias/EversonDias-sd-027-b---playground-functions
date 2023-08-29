@@ -26,13 +26,13 @@ O projeto "Playground Functions" consiste em um conjunto de funções que realiz
 1. Clone o Projeto
 
 ```bash
-git clone
+git clone https://github.com/EversonDias/Project_Trybe_JavaScript_Playground_Functions.git PlaygroundFunctions
 ```
 
 2. Entre na Pasta
 
 ```bash
-cd 
+cd PlaygroundFunctions
 ```
 
 3. Instale as Dependências
